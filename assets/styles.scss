@@ -18,30 +18,55 @@
     position:relative; 
     top: 8em; 
     left: 21em;
+    @media #{$laptop-device,$desktop-device}{
+        left: 10em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 15em;
+    }
 }
 .container-form{
     position:relative; 
     top: 8em; 
+    @media #{$laptop-device,$desktop-device}{
+        top: 5em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+    }
 }
 .container-form-hablemos{
     position:relative; 
     top: 7em;
+    @media #{$laptop-device,$desktop-device}{
+        top: 5em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+    }
 }
 .container-form-hablemos2{
     position:relative; 
-    top: 3em;
+    top: 2em;
 }
 .container-form-hablemos3{
     position:relative; 
     top: 10em;
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+    }
 }
-.container-form-identidad{
-    position:relative; 
-    top: 2em;
-}
+
 .container-form-identidad2{
     position:relative; 
     top: 5em;
+    @media #{$laptop-device,$desktop-device}{
+        top: 2em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+    }
 }
 .text-border{
       -webkit-text-stroke: 3px #00273D;
@@ -54,11 +79,23 @@
     position:relative; 
     left: -8em;
     top: -1em; 
+    @media #{$laptop-device,$desktop-device}{
+        left: -4em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 0;
+    }
 }
 .content-text-border-aspectos{
     position:relative; 
     left: -8em;
     top: -1em; 
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: -1em;
+
+    }
 }
 .text-border-aspectos{
     -webkit-text-stroke: 3px #00273D;
@@ -82,24 +119,61 @@
     font-size: 8vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+    }
 }
 .content-text-seconds{
     position:relative;
     top: -6em;  
     left: 5em;
+    @media #{$laptop-device}{
+        top: -3em;  
+        left: 0;
+    }
+    @media #{$desktop-device}{
+        top: -2em;  
+        left: 0;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;  
+        left: 2em;
+    }
 }
 .content-text-sitio-web{
     position:relative;
     top: -13.8em;  
     left: -8em;
-    
+    @media #{$laptop-device}{
+        top: -9.5em;  
+        left: -4.5em;
+    }
+    @media #{$desktop-device}{
+        top: -8.5em;  
+        left: -4em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;  
+        left: 2em;
+    }
 }
 
 .content-text-tecni{
     position:relative;
     top: -6em;  
     left: -8em;
-    
+    @media #{$laptop-device}{
+        top: -5em;  
+        left: -8em;
+    }
+    @media #{$desktop-device}{
+        top: -4em;  
+        left: -8em;
+    }
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 1.5em;
+    }
 }
 .text-seconds{
     color: #00273D;
@@ -117,9 +191,12 @@
     position:relative;
     top: 4em;  
     left: 3em;
-
     height:60vh;
     width:.1vw;
-    border-width:0;
     background: radial-gradient(circle, rgba(56,63,121,1) 0%, rgba(255,255,255,1) 100%);
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        height:.1vw;
+        width:60vh;
+        top: 0;
+    }
 }
