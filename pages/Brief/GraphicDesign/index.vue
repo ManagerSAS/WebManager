@@ -7,9 +7,9 @@
 
 </template>
 <script>
-import Welcome from '@/components/Brief/DesarrolloWeb/welcome.vue'
-import FormBrief from '@/components/Brief/DesarrolloWeb'
-import FoorterBrief from '~/components/FoorterBrief.vue'
+import Welcome from '@/components/Brief/DiseñoGrafico/welcome.vue'
+import FormBrief from '@/components/Brief/DiseñoGrafico'
+import FoorterBrief from '~/components/FooterBrief.vue'
 
     export default {
         components:{

@@ -6,6 +6,11 @@
 .text-poppins{
     font-family: 'Poppins', sans-serif;
 }
+.titulos{
+    font-family: 'Quicksand', sans-serif;
+    color: #00273D;
+    font-weight: 800;
+}
 .ImgEquipo{
     background-image: url("../static/Brief/EquipoParaTuMarca.png");
     position:flex; 
@@ -21,15 +26,22 @@
     @media #{$laptop-device,$desktop-device}{
         left: 10em;
     }
-    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+    @media #{$tablet-device,$large-mobile}{
         top: 0;
         left: 15em;
+    }
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 30vw;
     }
 }
 .container-form{
     position:relative; 
     top: 8em; 
-    @media #{$laptop-device,$desktop-device}{
+    @media #{$laptop-device}{
+        top: 2em;
+    }
+    @media #{$desktop-device}{
         top: 5em;
     }
     @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
@@ -39,7 +51,10 @@
 .container-form-hablemos{
     position:relative; 
     top: 7em;
-    @media #{$laptop-device,$desktop-device}{
+    @media #{$laptop-device}{
+        top: 2em;
+    }
+    @media #{$desktop-device}{
         top: 5em;
     }
     @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
@@ -62,18 +77,21 @@
     position:relative; 
     top: 5em;
     @media #{$laptop-device,$desktop-device}{
-        top: 2em;
+        top: 1em;
     }
     @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
         top: 0;
     }
 }
 .text-border{
-      -webkit-text-stroke: 3px #00273D;
-      color: transparent; 
-      font-size: 10vw;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
+    -webkit-text-stroke: 3px #00273D;
+    color: transparent; 
+    font-size: 10vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        font-size: 15vw;
+    }
 }
 .content-text-border{
     position:relative; 
@@ -82,20 +100,35 @@
     @media #{$laptop-device,$desktop-device}{
         left: -4em;
     }
-    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+    @media #{$tablet-device,$large-mobile}{
         top: 0;
         left: 0;
+    }
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 0;
+    }
+}
+.content-text-border-adicional{
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: -2em;
     }
 }
 .content-text-border-aspectos{
     position:relative; 
     left: -8em;
     top: -1em; 
-    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+    @media #{$tablet-device,$large-mobile}{
         top: 0;
         left: -1em;
-
     }
+    top: -1em; 
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: -10vw;
+    }
+    
 }
 .text-border-aspectos{
     -webkit-text-stroke: 3px #00273D;
@@ -103,13 +136,24 @@
     font-size: 6vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
+    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+        font-size: 10vw;
+        -webkit-text-stroke: 2px #00273D;
+    }
 }
 .text-border-hable{
     -webkit-text-stroke: 3px #00273D;
-    color: transparent; 
+    color: transparent;
+    position:relative; 
     font-size: 8vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        font-size: 10vw;
+        left: -1em;
+        -webkit-text-stroke: 2px #00273D;
+    }
 }
 .text-border-mos{
     -webkit-text-stroke: 3px #00273D;
@@ -119,8 +163,15 @@
     font-size: 8vw;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+    @media #{$tablet-device,$large-mobile}{
         top: 0;
+    }
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        font-size: 10vw;
+        left: -1em;
+        -webkit-text-stroke: 2px #00273D;
+
     }
 }
 .content-text-seconds{
@@ -139,6 +190,10 @@
         top: 0;  
         left: 2em;
     }
+    @media #{$small-mobile,$extra-small-mobile}{
+        justify-content: center;
+        align-items: center;
+    }
 }
 .content-text-sitio-web{
     position:relative;
@@ -156,6 +211,10 @@
         top: 0;  
         left: 2em;
     }
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;  
+        left: 0;
+    }
 }
 
 .content-text-tecni{
@@ -170,9 +229,13 @@
         top: -4em;  
         left: -8em;
     }
-    @media #{$tablet-device,$large-mobile,$small-mobile,$extra-small-mobile}{
+    @media #{$tablet-device,$large-mobile}{
         top: 0;
         left: 1.5em;
+    }
+    @media #{$small-mobile,$extra-small-mobile}{
+        top: 0;
+        left: 0;
     }
 }
 .text-seconds{
@@ -180,12 +243,18 @@
     font-size: 4.5vw;
     font-family: 'Quicksand', sans-serif;
     font-weight: 800;
+    @media #{$small-mobile,$extra-small-mobile}{
+        font-size: 6vw;
+    }
 }
 .text-seconds-tecni{
     color: #00273D;
     font-size: 4.5vw;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 800;
+    font-weight: 800; 
+    @media #{$small-mobile,$extra-small-mobile}{
+        font-size: 7vw;
+    }
 }
 .linea-div{
     position:relative;

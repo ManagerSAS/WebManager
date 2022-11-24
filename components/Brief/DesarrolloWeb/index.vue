@@ -3,14 +3,14 @@
         <v-stepper v-model="e1" class="pb-md-5" style="background-color: transparent;border: transparent; height: 100%; width: 100%;">
             <v-stepper-items class="pb-md-5">
                 <v-stepper-content step="1" >
-                    <v-row>
+                    <v-row >
                         <v-col cols="12" md="5" lg="5" sm="12">
                             <div class="content-text">
                                 <div class="content-text-border">
                                     <span class="text-border">¡EY!</span><br>
                                 </div>
                                 <div class="content-text-seconds">
-                                    <span class="text-seconds">qué tal?</span>
+                                    <span class="text-seconds">¿qué tal?</span>
                                 </div>
                             </div>
                         </v-col>
@@ -19,34 +19,38 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6" sm="12">
-                            <div class="container-form">
+                            <div class="container-form mt-lg-15 mb-lg-15 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label >Hola!</label>
+                                        <label class="titulos" >¡Hola!</label>
                                         <v-text-field
                                             v-model="nombre"
+                                            :rules="nameRules"
                                             color="teal darken-4"
-                                            label="Escribe tu nombre aquí"
+                                            label="Escribe tu nombre aquí*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Hablemos!</label>
+                                        <label class="titulos" >¡Hablemos!</label>
                                         <v-text-field
                                             v-model="NumeroCel"
+                                            :rules="nameRules"
+                                            type="number"
                                             color="teal darken-4"
-                                            label="Escribe tu numero de contacto"
+                                            label="Escribe tu número de contacto*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label >Te contactaremos por correo!</label>
+                                        <label class="titulos" >¡Te contactaremos por correo!</label>
                                         <v-text-field
                                             v-model="Email"
+                                            :rules="emailRules"
                                             color="teal darken-4"
-                                            label="Escribe tu electronico"
+                                            label="Escribe tu electrónico*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
@@ -83,58 +87,71 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <div class="container-form-hablemos">
+                            <div class="container-form-hablemos mt-lg-15 mb-lg-15 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7" sm="12">
-                                        <label >Nombre de tu marca</label>
+                                        <label class="titulos" >Nombre de tu marca</label>
                                         <v-text-field
                                             v-model="NameMarca"
+                                            :rules="nameRules"
                                             hide-details
                                             color="teal darken-4"
-                                            label="Escribe el nombre de tu marca"
+                                            label="Escribe el nombre de tu marca*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cual es tu actividad  principal?</label>
+                                        <label class="titulos">¿Cual es tu actividad  principal?</label>
                                         <v-text-field
                                             v-model="FunctionSite"
                                             hide-details
+                                            :rules="nameRules"
                                             color="teal darken-4"
-                                            label="Escribe cuál es la funcion principal del sitio web"
+                                            label="Escribe cuál es la funcion principal del sitio web*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label >De que tamaño es tu empresa</label>
+                                        <label class="titulos" >¿De que tamaño es tu empresa?</label>
                                         <v-text-field
                                             v-model="tamEmpresa"
-                                            label="Tipo de trámite *"
+                                            :rules="nameRules"
+                                            label="Escribe la cantidad de trabajadores que tienes*"
                                             hide-details
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label >Donde hacen presencia?</label>
+                                        <label class="titulos" >¿Donde hacen presencia?</label>
                                         <v-text-field
                                             hide-details
                                             v-model="Presencia"
+                                            :rules="nameRules"
                                             color="teal darken-4"
-                                            label="Escribe lugares donde hace presencia tu marca"
+                                            label="Escribe lugares donde hace presencia tu marca*"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 1"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 3"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -143,7 +160,7 @@
                     </v-row>
                 </v-stepper-content> 
                 <v-stepper-content step="3">
-                    <v-row>
+                    <v-row class="mb-5">
                         <v-col cols="12" md="5" lg="5">
                             <div class="content-text">
                                 <div class="content-text-border">
@@ -160,98 +177,106 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <v-row class="text-quicksand">
-                                <v-col cols="12" md="6" lg="7" sm="6">
-                                    <label>Estado del sitio web</label>
-                                    <v-radio-group v-model="EstatusSite" hide-details>
-                                        <v-row >
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                label="Diseño desde 0"
-                                                value="Diseño desde 0"
-                                                hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Rediseno"
-                                                    value="Rediseno"
+                            <div class="text-quicksand mt-lg-15 mb-lg-0 mt-xl-15 mb-xl-0">
+                                <v-row >
+                                    <v-col cols="12" md="6" lg="7" sm="6">
+                                        <label class="titulos">Estado del sitio web</label>
+                                        <v-radio-group v-model="EstatusSite" hide-details>
+                                            <v-row >
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                    label="Diseño desde 0"
+                                                    value="Diseño desde 0"
                                                     hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Plantilla Web"
-                                                    value="Plantilla Web"
-                                                    hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                        </v-row>   
-                                    </v-radio-group> 
-                                    <label >A quién va dirigido?</label>
-                                    <v-text-field
-                                        v-model="Dirigido"
-                                        hide-details
-                                        color="teal darken-4"
-                                        label="Escribe a quien va dirigido el sitio"
-                                    ></v-text-field>
-                                </v-col>
-                                <v-col cols="12" md="6" lg="7" sm="6">
-                                    <label>Tpo de sitio web</label>
-                                    <v-radio-group v-model="TypeSite" hide-details>
-                                        <v-row >
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Corporativo"
-                                                    value="Corporativo"
-                                                    hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Landig Page"
-                                                    value="Landig Page"
-                                                    hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Intranet o extranet"
-                                                    value="Intranet o extranet"
-                                                    hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                            <v-col cols="12" md="12" lg="12">
-                                                <v-radio
-                                                    label="Intranet o extranet"
-                                                    value="E-commerce"
-                                                    hide-details
-                                                ></v-radio>
-                                            </v-col>
-                                        </v-row>   
-                                    </v-radio-group> 
-                                </v-col>
-                            </v-row>
- 
-                            <v-row class="text-quicksand">
-                               
-                            </v-row>
-                            <v-row>
-                                <v-col class="text-quicksand" justify="center" align="end" cols="7">
-                                    <v-btn
-                                        color="#29ABE2"
-                                        style="color: white"
-                                        @click="e1 = 4"
-                                    >
-                                        Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
-                                    </v-btn>
-                                </v-col>
-                            </v-row>
+                                                    ></v-radio>
+                                                </v-col>
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="Rediseno"
+                                                        value="Rediseno"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="Plantilla Web"
+                                                        value="Plantilla Web"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                            </v-row>   
+                                        </v-radio-group> <br>
+                                        <label class="titulos">¿A quién va dirigido?</label>
+                                        <v-text-field
+                                            v-model="Dirigido"
+                                            hide-details
+                                            :rules="nameRules"
+                                            color="teal darken-4"
+                                            label="Escribe a quién va dirigido el sitio*"
+                                        ></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" md="6" lg="7" sm="6">
+                                        <label class="titulos">Tipo de sitio web</label>
+                                        <v-radio-group v-model="TypeSite" hide-details>
+                                            <v-row >
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="Corporativo"
+                                                        value="Corporativo"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="Landig Page"
+                                                        value="Landig Page"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="Intranet o extranet"
+                                                        value="Intranet o extranet"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                                <v-col cols="12" md="12" lg="12">
+                                                    <v-radio
+                                                        label="E-commerce"
+                                                        value="E-commerce"
+                                                        hide-details
+                                                    ></v-radio>
+                                                </v-col>
+                                            </v-row>   
+                                        </v-radio-group> 
+                                    </v-col>
+                                </v-row>
+                                <v-row>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                            <v-btn
+                                                color="#29ABE2"
+                                                style="color: white"
+                                                @click="e1 = 2"
+                                            >
+                                            <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                            </v-btn>
+                                        </v-col>
+                                        <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                            <v-btn
+                                                color="#29ABE2"
+                                                style="color: white"
+                                                @click="e1 = 4"
+                                            >
+                                                Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            </v-btn>
+                                        </v-col>
+                                </v-row>
+                            </div>
                         </v-col>
                     </v-row>
                 </v-stepper-content> 
                 <v-stepper-content step="4">
-                    <v-row>
+                    <v-row class="mb-5"> 
                         <v-col cols="12" md="5" lg="5">
                             <div class="content-text">
                                 <div class="content-text-border">
@@ -268,10 +293,10 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <div class="container-form-identidad">
+                            <div class="container-form-identidad mt-lg-15 mb-lg-0 mt-xl-15 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cuentan con colores corporativos?</label>
+                                        <label class="titulos">¿Cuentan con colores corporativos?</label>
                                         <v-radio-group v-model="Colores" hide-details>
                                             <v-row >
                                                 <v-col cols="12" md="12" lg="12">
@@ -292,8 +317,9 @@
                                                     <v-text-field
                                                     v-model="ColorCual"
                                                     hide-details
+                                                    :rules="nameRules"
                                                     color="teal darken-4"
-                                                    label="Cuales son los colores"
+                                                    label="Cuáles son los colores"
                                                 ></v-text-field>
                                                 </v-col>
                                             </v-row>   
@@ -302,7 +328,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Objetivo del sitio web</label>
+                                        <label class="titulos">Objetivo del sitio web</label>
                                         <v-radio-group v-model="ObjectiveSite" hide-details>
                                             <v-row >
                                                 <v-col cols="12" md="12" lg="12">
@@ -352,7 +378,7 @@
                                                         v-model="OpcionObjetivo"
                                                         hide-details
                                                         color="teal darken-4"
-                                                        label="Cuales son los colores"
+                                                        label="Cuáles son los colores"
                                                     ></v-text-field>
                                                 </v-col>
                                             </v-row>   
@@ -360,13 +386,22 @@
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 3"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 5"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -375,7 +410,7 @@
                     </v-row>
                 </v-stepper-content> 
                 <v-stepper-content step="5">
-                    <v-row>
+                    <v-row class="mb-5">
                         <v-col cols="12" md="5" lg="5">
                             <div class="content-text">
                                 <div class="content-text-border">
@@ -392,10 +427,10 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <div class="container-form-identidad2">
+                            <div class="container-form-identidad2 mt-lg-15 mb-lg-0 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Hace cuanto se diseñó el sitio?</label>
+                                        <label class="titulos">¿Hace cuánto se diseñó el sitio?</label>
                                         <v-textarea
                                             v-model="TimeSite"
                                             hide-details
@@ -408,7 +443,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Puntos a favor</label>
+                                        <label class="titulos">Puntos a favor</label>
                                         <v-textarea
                                             v-model="PuntoFavor"
                                             hide-details
@@ -421,7 +456,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Puntos en contra</label>
+                                        <label class="titulos">Puntos en contra</label>
                                         <v-textarea
                                             v-model="PuntoContra"
                                             hide-details
@@ -433,13 +468,22 @@
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 4"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 6"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -465,48 +509,46 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <div class="container-form-identidad2">
+                            <div class="container-form-identidad2 pt-lg-15 mt-lg-15 mb-lg-15 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cómo es el mapa de navegación?</label>
+                                        <label class="titulos">¿Cómo es el mapa de navegación?</label>
                                         <v-text-field
                                             v-model="MapNav"
                                             hide-details
                                             color="teal darken-4"
-                                            label="Donde esta alojada"
+                                            label="Escribe aquí cúal es el contenido que quieres que tenga el sitio/pagina web"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cuentan con Backup</label>
-                                        <v-text-field
-                                            v-model="Backup"
-                                            hide-details
-                                            color="teal darken-4"
-                                            label="Donde esta alojada"
-                                        ></v-text-field>
-                                    </v-col>
-                                </v-row>
-                                <v-row class="text-quicksand">
-                                    <v-col cols="12" md="6" lg="7">
-                                        <label>contenido para Footer</label>
+                                        <label class="titulos">contenido para Footer</label>
                                         <v-text-field
                                             v-model="ContFooter"
                                             hide-details
                                             color="teal darken-4"
-                                            label="Donde esta alojada"
+                                            label="Escribe aquí cúal es el contenido que quieres mostrar en el Footer/pie de pagina"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 5"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 7"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -515,7 +557,7 @@
                     </v-row>
                 </v-stepper-content> 
                 <v-stepper-content step="7">
-                    <v-row>
+                    <v-row class="mb-5">
                         <v-col cols="12" md="5" lg="5">
                             <div class="content-text">
                                 <div class="content-text-border-aspectos">
@@ -531,10 +573,10 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6">
-                            <div class="container-form-identidad2">
+                            <div class="container-form-identidad2 mt-lg-15 mb-lg-0 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Donde está alojada la web?</label>
+                                        <label class="titulos">¿Donde está alojada la web?</label>
                                         <v-text-field
                                             v-model="Alojamiento"
                                             hide-details
@@ -545,7 +587,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cuentan con Backup?</label>
+                                        <label class="titulos">¿Cuentan con Backup?</label>
                                         <v-radio-group v-model="BackupsAlojam" >
                                             <v-row >
                                                 <v-col cols="12" md="3" lg="3">
@@ -568,7 +610,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cuentan con CDN?</label>
+                                        <label class="titulos">¿Cuentan con CDN?</label>
                                         <v-radio-group v-model="Cdn" >
                                             <v-row >
                                                 <v-col cols="12" md="3" lg="3">
@@ -599,7 +641,7 @@
                                 </v-row>
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Cuentan con SSL?</label>
+                                        <label class="titulos">¿Cuentan con SSL?</label>
                                         <v-radio-group v-model="Ssl" >
                                             <v-row >
                                                 <v-col cols="12" md="3" lg="3">
@@ -629,13 +671,22 @@
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 6"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 8"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -661,27 +712,37 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6" sm="12">
-                            <div class="container-form-hablemos3">
+                            <div class="container-form-hablemos3 mt-lg-15 mb-lg-15 mt-xl-0 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="7">
-                                        <label>Tu presupuesto es de</label>
+                                        <label class="titulos">Tu presupuesto es de</label>
                                         <v-text-field
                                             v-model="Presupuesto"
                                             hide-details
+                                            type="number"
                                             color="teal darken-4"
-                                            label="Cuanto es tu presupuesto"
+                                            label="Cuánto es tu presupuesto para el proyecto"
                                         ></v-text-field>
                                     </v-col>
                                 </v-row>
                                 
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 7"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="e1 = 9"
                                         >
-                                            Avanzar <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Siguiente <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -693,7 +754,7 @@
                     <v-row>
                         <v-col cols="12" md="5" lg="5" sm="12">
                             <div class="content-text">
-                                <div class="content-text-border">
+                                <div class="content-text-border content-text-border-adicional">
                                     <span class="text-border-hable">ADICI</span>
                                     <span class="text-border-mos">ONALES</span>
                                 </div>
@@ -707,10 +768,10 @@
                             </div>
                         </v-col>
                         <v-col cols="12" md="6" lg="6" sm="12">
-                            <div class="mt-15">
+                            <div class="mt-lg-15 pt-lg-10 mt-xl-15 mb-xl-0">
                                 <v-row class="text-quicksand">
                                     <v-col cols="12" md="6" lg="6">
-                                            <label>Mantenimiento</label>
+                                            <label class="titulos">Mantenimiento</label>
                                             <v-radio-group v-model="Mantenimiento" hide-details>
                                                 <v-row >
                                                     <v-col cols="12" md="6" lg="6" sm="6">
@@ -773,7 +834,7 @@
                                                             hide-details
                                                         ></v-radio>
                                                     </v-col>
-                                                    <v-col cols="12" md="6" lg="6" sm="6">
+                                                    <v-col cols="12" md="8" lg="8" sm="8">
                                                         <v-radio
                                                             label="Sección privada para Cliente/Proveedor"
                                                             value="Sección privada para Cliente/Proveedor"
@@ -785,13 +846,22 @@
                                     </v-col>
                                 </v-row>
                                 <v-row>
-                                    <v-col class="text-quicksand" justify="center" align="end" cols="7">
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
+                                        <v-btn
+                                            color="#29ABE2"
+                                            style="color: white"
+                                            @click="e1 = 8"
+                                        >
+                                        <v-icon>mdi-arrow-left-drop-circle-outline</v-icon>Anterior 
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="text-quicksand" justify="center" align="center" cols="3">
                                         <v-btn
                                             color="#29ABE2"
                                             style="color: white"
                                             @click="enviarBrief"
                                         >
-                                            Envier Brief <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
+                                            Enviar Brief <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
                                         </v-btn>
                                     </v-col>
                                 </v-row>
@@ -806,7 +876,7 @@
                         :timeout="3000"
                         :value="snackbar"
                         :color="colorSnack"
-                        outlined
+                        shaped
                         elevation="24"
                     > {{ message }} </v-snackbar>
                 </v-col>
@@ -825,7 +895,7 @@
 </template>
 
 <script>
-// import post from '../../Pots/post'
+import post from '../../Pots/post'
     export default {
         data(){
             return{
@@ -836,7 +906,7 @@
                 emailRules: [
                     v => /.+@.+\..+/.test(v) || '',
                 ],
-                snackbar: true,
+                snackbar: false,
                 message:'',
                 colorSnack:'',
                 loading: false,
@@ -864,7 +934,6 @@
                 PuntoContra:'',
                 // estructura
                 MapNav:'',
-                Backup:'',
                 ContFooter:'',
                 //Aspectos tecnicos
                 Alojamiento:'',
@@ -882,67 +951,69 @@
             
         },
         methods:{
-            enviarBrief(){
-                this.botton = false
+            async enviarBrief(){
                 this.loading = true
                 this.snackbar = true
                 this.colorSnack = 'green accent-4'
                 this.message = 'Se esta procesando su informacion por favor espere...'
-
-                if(this.nombre !== '' && this.NumeroCel !== '' && this.Email !== '' && this.NameMarca !== '' && this.FunctionSite !== '' && this.tamEmpresa !== '' && this.Presencia !== '' && this.TimeSite!== '' &&this.PuntoFavor!== '' &&this.PuntoContra!== '' && this.MapNav!== '' &&this.Backup!== '' &&this.ContFooter !== '' && this.Alojamiento !==''){
+                if(this.nombre !== '' && this.NumeroCel !== '' && this.Email !== '' && this.NameMarca !== '' && this.FunctionSite !== '' && this.tamEmpresa !== '' && this.Presencia !== '' && this.MapNav!== '' &&this.ContFooter !== ''){
+                    
                     const data = {
-                        nombre:this.nombre,
-                        NumeroCel:this.NumeroCel,
-                        Email:this.Email,
+                        nombre: this.nombre,
+                        NumeroCel: this. NumeroCel,
+                        Email: this.Email,
                         // Hablos del sitio
-                        NameMarca:this.NameMarca,
-                        FunctionSite:this.FunctionSite,
-                        tamEmpresa:this.tamEmpresa,
-                        Presencia:this.Presencia,
-                        //----
+                        NameMarca: this.NameMarca,
+                        FunctionSite: this.FunctionSite,
+                        tamEmpresa: this.tamEmpresa,
+                        Presencia: this.Presencia,
+                        //----estado sitio
                         EstatusSite: this.EstatusSite,
-                        Dirigido:this.Dirigido,
-                        Corporativo:this.Corporativo,
-                        Landig:this.Landig,
-                        IntraExtra:this.IntraExtra,
-                        Commerce:this.Commerce,
-                        //---
-                        Colores:this.ColoreSi,
-                        ColorCual:this.ColorCual,
-                        MejorarDiseno:this.MejorarDiseno,
-                        Optimizar:this.Optimizar,
-                        MejorarVentas:this.MejorarVentas,
-                        Todas:this.Todas,
-                        Otra:this.Otra,
-                        OpcionObjetivo:this.OpcionObjetivo,
-                        // identidad
-                        TimeSite:this.TimeSite,
-                        PuntoFavor:this.PuntoFavor,
-                        PuntoContra:this.PuntoContra,
+                        Dirigido: this.Dirigido,
+                        TypeSite: this.TypeSite,
+                        //--- Identidad
+                        Colores: this.Colores,
+                        ColorCual: this.ColorCual,
+                        ObjectiveSite: this.ObjectiveSite,
+                        OpcionObjetivo: this.OpcionObjetivo,
+                        // Situacion actual
+                        TimeSite: this.TimeSite,
+                        PuntoFavor: this.PuntoFavor,
+                        PuntoContra: this.PuntoContra,
                         // estructura
-                        MapNav:this.MapNav,
-                        Backup:this.Backup,
-                        ContFooter:this.ContFooter,
+                        MapNav: this.MapNav,
+                        ContFooter: this.ContFooter,
                         //Aspectos tecnicos
-                        Alojamiento:this.Alojamiento,
-                        BackupSi:this.BackupSi,
-                        BackupNo:this.BackupNo,
-                        CdnSi:this.CdnSi,
-                        CdnNo:this.CdnNo,
-                        CdnCual:this.CdnCual,
-                        SslSi:this.SslSi,
-                        SslNo:this.SslNo,
-                        SslCual:this.SslCual,
-                        Presupuesto:this.Presupuesto,
-                        Mantenimiento:this.Mantenimiento,
-                        Seguridad:this.Seguridad,
-                         
+                        Alojamiento: this.Alojamiento,
+                        BackupsAlojam: this.BackupsAlojam,
+                        Cdn: this.Cdn,
+                        CdnCual: this.CdnCual,
+                        Ssl: this.Ssl,
+                        SslCual: this.SslCual,
+                        // -------
+                        Presupuesto: this.Presupuesto,
+                        // -----
+                        Mantenimiento: this.Mantenimiento,
+                        Seguridad: this.Seguridad,   
                     }
-                    // const resonse = await post.SendBriefDesarrolloWeb(data)
-                    console.log(data)
+                    // console.log(data)
+                    const resonse = await post.SendBriefDesarrolloWeb(data)
+                    // console.log(resonse)
+                    if(resonse !== true){
+                        this.loading = true
+                        this.snackbar = true
+                        this.colorSnack = 'green accent-4'
+                        this.message = 'Su solicitud se envio con éxito'
+                        setTimeout( function() { window.location.href = "https://agenciamanager.com"; }, 1000 );
+                    }else{
+                        this.loading = false
+                        this.snackbar = true
+                        this.colorSnack = 'red accent-4'
+                        this.message = 'Intente nuevamente'
+                    }
                 }else{
                     this.botton = false
-                    this.loading = true
+                    this.loading = false
                     this.snackbar = true
                     this.colorSnack = 'red accent-4'
                     this.message = 'Por favor llenar los campos obligatorios "*"'
